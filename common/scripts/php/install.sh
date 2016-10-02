@@ -6,6 +6,8 @@ sudo \
   apt-get update && \
   apt-get install -y php7.0-cli && \
   apt-get install -y php-redis && \
+  apt-get install -y php-sqlite3 && \
+  apt-get install -y php-sqlite3 && \
   apt-get install -y php7.0-xml
 
 # Get Composer

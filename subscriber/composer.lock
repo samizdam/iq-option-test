@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ca415bf27da5d1d6c98a7ac66be23ccf",
-    "content-hash": "12ed9feb4547d3737eaa31d117616479",
+    "hash": "8be3fd51155586ca7dd462e4f949aae6",
+    "content-hash": "9bfc3fbb44098141662a81bd1f86645f",
     "packages": [
         {
             "name": "symfony/console",
@@ -376,12 +376,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "71c790690bebbcfecd1e2de058160170e7c911c7"
+                "reference": "5c324f4951aca87a2de61b7903b75126516b6386"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/71c790690bebbcfecd1e2de058160170e7c911c7",
-                "reference": "71c790690bebbcfecd1e2de058160170e7c911c7",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/5c324f4951aca87a2de61b7903b75126516b6386",
+                "reference": "5c324f4951aca87a2de61b7903b75126516b6386",
                 "shasum": ""
             },
             "require": {
@@ -431,7 +431,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2016-10-02 12:37:45"
+            "time": "2016-10-02 13:12:17"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1427,7 +1427,10 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
+        "ext-pdo": "*",
         "ext-redis": "*"
     },
-    "platform-dev": []
+    "platform-dev": {
+        "ext-sqlite3": "*"
+    }
 }

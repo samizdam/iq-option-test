@@ -9,10 +9,12 @@
     ],
     "minimum-stability": "dev",
     "require": {
+        "ext-pdo": "*",
         "ext-redis": "*",
         "symfony/console": "3.1"
     },
     "require-dev": {
+        "ext-sqlite3": "*",
         "phpunit/phpunit": "5",
         "ukko/phpredis-phpdoc": "*"
     },
