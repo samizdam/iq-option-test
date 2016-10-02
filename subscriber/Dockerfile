@@ -19,7 +19,6 @@ RUN \
   mv /composer.phar /usr/local/bin/composer
 
 # Define mountable directories.
-# VOLUME ["/etc/supervisor/supervisord.conf"]
 COPY ./etc/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # delivering worker to container
@@ -27,16 +26,11 @@ COPY ./subscriber-worker.php /usr/local/sbin/subscriber/subscriber-worker.php
 COPY ./src /usr/local/sbin/subscriber/src
 COPY ./composer.json /usr/local/sbin/subscriber/composer.json
 COPY ./composer.lock /usr/local/sbin/subscriber/composer.lock
+COPY ./database.sqlite.template /var/data/subscriber/database.db
 
 RUN \
   cd /usr/local/sbin/subscriber && \
   composer install --prefer-dist --no-dev
-
-# COPY ./vendor /usr/local/sbin/subscriber/vendor
-
-
-# Define working directory.
-# WORKDIR /etc/supervisor/conf.d
 
 # Define default command.
 CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]

@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-# stop and remove old containers
+# stop and remove old containers and other docker stuff
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
+sudo docker network rm docker.network
 
-# join all services via network
+# join all services via named network
 sudo docker network create docker.network
 
 # build and run eventbus (redis server in current implementation)

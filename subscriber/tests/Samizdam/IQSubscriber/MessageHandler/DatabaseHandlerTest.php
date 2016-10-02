@@ -83,7 +83,6 @@ JSON;
                 value REAL NOT NULL,
                 time INTEGER NOT NULL
             );
-   );
 SQL
         );
     }
