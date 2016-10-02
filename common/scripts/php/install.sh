@@ -4,7 +4,9 @@
 sudo \
   add-apt-repository ppa:ondrej/php && \
   apt-get update && \
-  apt-get install -y php7.0-cli
+  apt-get install -y php7.0-cli && \
+  apt-get install -y php-redis && \
+  apt-get install -y php7.0-xml
 
 # Get Composer
 sudo \

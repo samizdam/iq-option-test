@@ -17,7 +17,11 @@ RUN \
 # Define mountable directories.
 # VOLUME ["/etc/supervisor/supervisord.conf"]
 COPY ./etc/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY ./src /usr/local/sbin/publisher
+
+# delivering worker to container
+COPY ./subscriber-worker.php /usr/local/sbin/subscriber/subscriber-worker.php
+COPY ./src /usr/local/sbin/subscriber/src
+COPY ./vendor /usr/local/sbin/subscriber/vendor
 
 # Define working directory.
 # WORKDIR /etc/supervisor/conf.d
