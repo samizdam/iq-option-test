@@ -1,19 +1,15 @@
 <?php
 /**
+ *
  * Entry worker script.
  *
  * Accept next parameters:
- * channels: whitespace separated names of channel for subscribe.
  * --host (-h): address of Redis server.
  * --port (-p): port number for connection with Redis server.
  *
  */
-use Samizdam\IQSubscriber\MessageHandler\CompositeHandler;
-use Samizdam\IQSubscriber\MessageHandler\DatabaseHandler;
-use Samizdam\IQSubscriber\MessageHandler\EchoHandler;
-use Samizdam\IQSubscriber\Worker;
+use Samizdam\IQPublisher\Worker;
 use Symfony\Component\Console\Input\ArgvInput;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -25,7 +21,7 @@ $definition->addOptions([
         new InputOption('port', 'p', InputOption::VALUE_REQUIRED, 'Redis port value', 6379),
     ]
 );
-$definition->addArgument(new InputArgument('channels', InputArgument::IS_ARRAY, 'Redis channels for subscribe'));
+
 $input = new ArgvInput($_SERVER['argv'], $definition);
 $host = $input->getOption('host');
 $port = $input->getOption('port');
@@ -33,9 +29,5 @@ $port = $input->getOption('port');
 $redis = new Redis();
 $redis->pconnect($host, $port);
 
-$channels = $input->getArgument('channels');
-$pdo = new PDO('sqlite:/var/data/subscriber/database.db');
-$handler = new CompositeHandler([new EchoHandler(), new DatabaseHandler($pdo)]);
-
-$worker = new Worker($redis, $channels, $handler);
-$worker->run();
+$worker = new Worker($redis);
+$worker->begin();

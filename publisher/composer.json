@@ -1,0 +1,28 @@
+{
+    "name": "samizdam/publisher",
+    "type": "project",
+    "authors": [
+        {
+            "name": "samizdam",
+            "email": "samizdam@inbox.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ext-redis": "*",
+        "symfony/console": "3.1"
+    },
+    "require-dev": {
+        "ukko/phpredis-phpdoc": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Samizdam\\": "src/Samizdam"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Samizdam\\": "tests/Samizdam"
+        }
+    }
+}
