@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # Get PHP 7
-sudo \
-  add-apt-repository ppa:ondrej/php && \
-  apt-get update && \
-  apt-get install -y php7.0-cli && \
-  apt-get install -y php-redis && \
-  apt-get install -y php-sqlite3 && \
-  apt-get install -y php-sqlite3 && \
-  apt-get install -y php7.0-xml
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get install -y \
+  php7.0-cli \
+  php-redis \
+  php-sqlite3 \
+  php-sqlite3 \
+  php7.0-xml
 
 # Get Composer
 sudo \
