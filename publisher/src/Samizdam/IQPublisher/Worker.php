@@ -42,6 +42,6 @@ class Worker
 
     private function getRandomValue(): float
     {
-        return (float)200 / rand(100, 200);
+        return (float) (200 / rand(100, 200));
     }
 }

@@ -15,3 +15,19 @@
 name - название котировки (выбрать несколько значений)
 value - значение котировки (случайное число в интервале от 1 до 2)
 time - время в формате unix timestamp
+
+## Установка и запуск
+
+Для установки и запуска необходимы git и vagrant (+ VirtualBox).
+Могут также потребоваться vagrant plugin vagrant-vbguest и дополнения для гостевой машины VirtualBox.
+
+```
+git clone git@github.com:samizdam/iq-option-test.git
+vargant up
+```
+
+Детали реализации и работы компонентов проекта описаны соответственно в
+
+- [/eventbus/README.md](eventbus/README.md) — шина данных
+- [/publisher/README.md](publisher/README.md) — компонент А
+- [/subscriber/README.md](subscriber/README.md) — компонент Б
