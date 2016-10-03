@@ -14,9 +14,7 @@ vagrant up
 vagrant ssh
 
 просмотреть публикацию сообщений в Redis
-sudo docker exec -it eventbus bash
-
-redis-cli
+sudo docker exec -it eventbus redis-cli
 
 SUBSCRIBE foo
 ```
