@@ -12,7 +12,7 @@ class Worker
      * @var \Redis
      */
     private $redis;
-    
+
     public function __construct(\Redis $redis)
     {
         $this->redis = $redis;
@@ -20,6 +20,7 @@ class Worker
 
     public function begin()
     {
+        // TODO: think run and stop
         while (true) {
             $message = $this->createMessage();
             $messageString = json_encode($message);
@@ -31,11 +32,16 @@ class Worker
 
     private function createMessage(): array
     {
-        $value = 200 / rand(100, 200);
+        $value = $this->getRandomValue();
         return [
             'name' => 'EUR/USD',
             'value' => $value,
             'time' => time(),
         ];
+    }
+
+    private function getRandomValue(): float
+    {
+        return (float)200 / rand(100, 200);
     }
 }

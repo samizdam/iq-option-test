@@ -39,6 +39,9 @@ class MessageAdapter
         return $this->time;
     }
 
+    /**
+     * TODO: throw exception on invalid input data, handle and log it in Handler or Worker.
+     */
     private function checkAndSetData(array $data)
     {
         if (isset($data['name']) && is_string($data['name'])) {

@@ -6,9 +6,3 @@
 Все параметры запуска воркера могут быть заданы через конфигурационный файл `/etc/supervisor/supervisord.conf`.
 
 Разработка и тестирование могут осуществлятся через Vagrant.
-Запуск тестов:
-
-```
-cd /vagrant/subscriber
-composer install
-```
