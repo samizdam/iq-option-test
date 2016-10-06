@@ -69,6 +69,4 @@ class MessageAdapter
     {
         $this->time = $time;
     }
-
-
 }
